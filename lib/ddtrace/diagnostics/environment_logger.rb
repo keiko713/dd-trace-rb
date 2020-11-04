@@ -264,7 +264,8 @@ module Datadog
 
             # Convert value to a string to avoid custom #to_json
             # handlers possibly causing errors.
-            [[:"integration_#{name}_#{setting}", value.to_s]]
+            # Update: removing to_s to see if it helps
+            [[:"integration_#{name}_#{setting}", value]]
           end
         end]
       end
